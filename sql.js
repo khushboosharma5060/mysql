@@ -11,8 +11,8 @@ con.connect(function(err) {
   if (err) throw err;
 });
 
-
-const express = require('express');
+const
+ express = require('express');
 const Api = express();
 Api.use(express.json());
 var shortid = require("shortid");
@@ -21,8 +21,6 @@ const port = 3000;
 
 Api.post('/', (req,res) => {
   const id = shortid.generate();
- 
-  
     var sql = `INSERT INTO mytable (id, class, name, tech ) VALUES ("${id}", ${req.body.class}, 
     '${req.body.name}',"${req.body.tech}" )`;
     con.query(sql, function (err, result) {
